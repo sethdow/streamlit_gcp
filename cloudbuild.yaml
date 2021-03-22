@@ -7,7 +7,7 @@ steps:
       - '$_GCR_HOSTNAME/$PROJECT_ID/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA'
       - app
       - '-f'
-      - app/Dockerfile
+      - Dockerfile
     id: Build
   - name: gcr.io/cloud-builders/docker
     args:
@@ -33,12 +33,12 @@ images:
 options:
   substitutionOption: ALLOW_LOOSE
 substitutions:
-  _TRIGGER_ID: 120de9fc-7d39-4a08-8acf-429e77d2bab8
+  _TRIGGER_ID: 120de9fc-7d39-4a08-8acf-429e77d2bab4
   _PLATFORM: managed
   _SERVICE_NAME: recommendation-ai-app
   _DEPLOY_REGION: europe-west1
   _GCR_HOSTNAME: eu.gcr.io
-  _LABELS: gcb-trigger-id=120de9fc-7d39-4a08-8acf-429e77d2bab8
+  _LABELS: gcb-trigger-id=120de9fc-7d39-4a08-8acf-429e77d2bab4
 tags:
   - gcp-cloud-build-deploy-cloud-run
   - gcp-cloud-build-deploy-cloud-run-managed
