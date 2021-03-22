@@ -6,7 +6,7 @@ from google.cloud import secretmanager
 secrets = secretmanager.SecretManagerServiceClient()
 
 # This is passed in as an environ by default?
-PROJECT_ID = os.environ.get("PROJECTID")
+PROJECT_ID = 'm-ecom-recomm-ai'
 
 SECRET_VALUE = secrets.access_secret_version(request={"name": "projects/"+PROJECT_ID+"/secrets/example-secret/versions/1"}).payload.data.decode("utf-8")
 
